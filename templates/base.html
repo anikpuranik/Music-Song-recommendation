@@ -1,0 +1,26 @@
+<html>
+	<head>
+		{% if title %}
+			<title>{{title}}</title>
+		{% else %}
+			<title>Song App</title>
+		{% endif %}
+		
+		<style>
+
+		</style>
+	</head>
+	
+	<body>
+		<h2>
+			<div class="topnav">
+				<a href="/">Home</a>
+				<a href="/list/trending">Trending</a>
+				<a href="/list/artists">Artist</a>
+				<a href="/list/albums">Albums</a>
+			</div>
+		</h2>
+		<span style="text-align:center;"><h1>Music App</h1></span>
+		{% block content %}{% endblock %}
+	</body>
+</html>

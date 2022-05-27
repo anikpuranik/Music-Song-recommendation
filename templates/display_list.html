@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	
+		<h1><img src="/static/trending.jpg" height="120" width="150">{{list_type}}</h1>
+	
+		{% if list_type == "trending" %}
+			<p>Similar Songs</p>
+		{% endif %}
+			
+			<table style="width:100%">
+				{% for i in list_item %}
+				<tr>
+					<th><img src="/static/play.jpg" height="25" width="25"></th>
+					<th id="t">{{i[1]}}</th>
+					<th id="t">{{i[2]}}</th>
+					<th id="t">{{i[3]}}</th>
+				</tr>
+				{% endfor %}
+			</table>
+			
+	{% endblock %}

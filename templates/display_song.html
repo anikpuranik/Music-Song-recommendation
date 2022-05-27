@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+	{% block content %}
+		{% if list_type == "ARTISTS" %}
+			<h1><img src="/static/artist.png" height="120" width="150">{{list_type}}</h1>
+		{% elif list_type == "ALBUMS" %}
+			<h1><img src="/static/album.png" height="120" width="150">{{list_type}}</h1>
+		{% else %}
+			<h1><img src="/static/trending.jpg" height="120" width="150">{{list_type}}</h1>
+		{% endif %}
+		
+			{% if list_type not in nav_bar %}
+				<h2>simlar songs</h2>
+			{% endif %}
+			
+			{% for i in list_item %}
+				<img src="/static/play.jpg" height="25" width="25">{{i}}<br>
+			{% endfor %}
+			
+	{% endblock %}

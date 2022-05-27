@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	<style>
+		ul.lis > div {
+			display: inline-block;
+			padding: 10px 20px;
+			
+		#t {
+			text-align:right;
+		}
+		
+	</style>
+	<img src="/static/songapp.jpg" height="120" width="150">
+	<form method="POST">
+		<!--<textarea class="serach" name="search" cols="40"></textarea>
+		<button="submit" value="sunmit"></button>
+		<br><br>
+		-->
+		
+		<ul class="lis">
+		
+				<h2>Top Trending</h2>
+					{% for trending in trending_songs %}
+					<div class="top_charts">
+						<a href="/list1/{{trending[1]}}"><img src="/static/trending.jpg" height="120" width="150"><br><p id="t" >{{trending[1]}}</p></a>
+						<!--<input type="submit" name="chart" value="{{chart}}">-->
+					</div>
+					{% endfor %}
+					
+				<h2>Top Charts</h2>
+					{% for chart in top_charts_list %}
+					<div class="top_charts">
+						<a href="/list2/{{chart}}"><img src="/static/chart.png" height="120" width="150"><br><p id="t" >{{chart}}</p></a>
+					</div>
+					{% endfor %}
+					
+				<h2>Top Artists</h2>
+					{% for artist in top_artist_list %}
+					<div class="top_charts">
+						<a href="/artist/{{artist}}"><img src="/static/artist.png" height="120" width="150"><br><p id="t" >{{artist}}</p></a>
+					</div>
+					{% endfor %}
+
+				<h2>Top Albums</h2>
+					{% for album in top_album_list %}
+					<div class="top_charts">
+						<a href="/album/{{album}}"><img src="/static/album.png" height="120" width="150"><br><p id="t" >{{album}}</p></a>
+					</div>
+					{% endfor %}
+		</ul>
+	
+{% endblock %}
